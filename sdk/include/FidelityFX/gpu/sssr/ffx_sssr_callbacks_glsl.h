@@ -318,7 +318,7 @@ layout (set = 0, binding = 1001) uniform sampler s_LinearSampler;
         layout (set = 0, binding = SSSR_BIND_UAV_OUTPUT, rgba32f)           uniform image2D rw_output;
 #endif
 #if defined SSSR_BIND_UAV_RADIANCE
-        layout (set = 0, binding = SSSR_BIND_UAV_RADIANCE, rgba32f)         uniform image2D rw_radiance;
+        layout (set = 0, binding = SSSR_BIND_UAV_RADIANCE, rgba16f)         uniform image2D rw_radiance;
 #endif
 #if defined SSSR_BIND_UAV_VARIANCE
         layout (set = 0, binding = SSSR_BIND_UAV_VARIANCE, r32f)            uniform image2D rw_variance;
@@ -348,10 +348,10 @@ layout (set = 0, binding = 1001) uniform sampler s_LinearSampler;
         } rw_intersection_pass_indirect_args; 
 #endif
 #if defined SSSR_BIND_UAV_EXTRACTED_ROUGHNESS
-        layout (set = 0, binding = SSSR_BIND_UAV_EXTRACTED_ROUGHNESS, r32f) uniform image2D rw_extracted_roughness;
+        layout (set = 0, binding = SSSR_BIND_UAV_EXTRACTED_ROUGHNESS, r8) uniform image2D rw_extracted_roughness;
 #endif
 #if defined SSSR_BIND_UAV_BLUE_NOISE_TEXTURE
-        layout (set = 0, binding = SSSR_BIND_UAV_BLUE_NOISE_TEXTURE, rg32f) uniform image2D rw_blue_noise_texture;
+        layout (set = 0, binding = SSSR_BIND_UAV_BLUE_NOISE_TEXTURE, rg8) uniform image2D rw_blue_noise_texture;
 #endif
 #if defined SSSR_BIND_UAV_DEPTH_HIERARCHY
         layout (set = 0, binding = SSSR_BIND_UAV_DEPTH_HIERARCHY, r32f)     uniform image2D rw_depth_hierarchy[13];
