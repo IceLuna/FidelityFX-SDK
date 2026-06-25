@@ -74,7 +74,7 @@ FFX_DNSR_Reflections_Moments FFX_DNSR_Reflections_EstimateLocalNeighborhoodInGro
 }
 
 void FFX_DNSR_Reflections_StoreInGroupSharedMemory(FfxInt32x2 group_thread_id, FfxFloat16x3 radiance) {
-    radiance = clamp(radiance, FfxFloat16x3(0, 0, 0), FfxFloat16x3(100, 100, 100));
+    radiance = clamp(radiance, FfxFloat16x3(0, 0, 0), FfxFloat16x3(50, 50, 50));
     g_ffx_dnsr_shared_0[group_thread_id.y][group_thread_id.x] = FFX_DNSR_Reflections_PackFloat16(radiance.xy);
     g_ffx_dnsr_shared_1[group_thread_id.y][group_thread_id.x] = FFX_DNSR_Reflections_PackFloat16(radiance.zz);
 }
